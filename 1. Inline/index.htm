@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html data-ng-app="novatrox.ng">
+
+<head>
+    <title>Angular Best Practices</title>
+</head>
+
+<body data-ng-controller="appCtrl">
+    <h1>{{title}}</h1>
+    <div>Search: <input type="text" data-ng-model="query" data-ng-model-options="{ debounce: { default: 300 }}" /></div>
+    <span data-ng-if="isLoading">Loading data...</span>
+    <ul>
+        <li data-ng-repeat="item in items"><a href data-ng-click="selectItem(item)">{{item.name}}</a></li>
+    </ul>
+
+    <div data-ng-controller="detailsCtrl">
+        <div data-ng-if="hasDetails">
+            <h2>{{name}}</h2>
+            <img data-ng-if="imageUrl" data-ng-src="{{imageUrl}}" style="max-width:300px;" />
+        </div>
+    </div>
+    
+    <script src="scripts/libs/angular.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

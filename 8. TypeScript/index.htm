@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Angular Best Practices</title>
+</head>
+
+<body data-novatrox-app="ctrl">
+    <h1>{{ctrl.title}}</h1>
+    <div>Search: <input type="text" data-ng-model="ctrl.query" data-ng-model-options="{ debounce: { default: 300 }}" /></div>
+    <span data-ng-if="ctrl.isLoading">Loading data...</span>
+    <ul>
+        <li data-ng-repeat="item in ctrl.items"><a href data-ng-click="ctrl.selectItem(item)">{{item.name}}</a></li>
+    </ul>
+
+    <div data-novatrox-details="ctrl">
+        <div data-ng-if="ctrl.hasDetails">
+            <h2>{{ctrl.name}}</h2>
+            <img data-ng-if="ctrl.imageUrl" data-ng-src="{{ctrl.imageUrl}}" style="max-width:300px;" />
+        </div>
+    </div>
+    
+    <script src="scripts/libs/lodash.js"></script>
+    <script src="scripts/libs/postal.js"></script>
+    <script src="scripts/libs/system.js"></script>
+    <script>
+        // var appConfig = {
+        //     delay: 2000
+        // }
+
+        System.config({
+            baseURL: '/scripts/',
+            map: {
+                'angular': '/scripts/libs/angular.js'
+            },
+            meta: {
+                'angular': {
+                    format: 'global',
+                    exports: 'angular'
+                }
+            }
+        });
+        System.defaultJSExtensions = true;
+        System.import('app.js');
+    </script>
+</body>
+
+</html>

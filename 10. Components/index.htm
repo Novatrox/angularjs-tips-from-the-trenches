@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Angular Best Practices</title>
+</head>
+
+<body>
+    <spotify-search title="'Spotify'"></spotify-search>
+    
+    <script src="scripts/libs/system.js"></script>
+    <script>
+        System.config({
+            baseURL: '/scripts/',
+            map: {
+                'angular': '/scripts/libs/angular.js',
+                'postal': '/scripts/libs/postal.js',
+                'lodash': '/scripts/libs/lodash.js'
+            },
+            meta: {
+                'angular': {
+                    format: 'global',
+                    exports: 'angular'
+                }
+            }
+        });
+        System.defaultJSExtensions = true;
+        System.import('app.js');
+    </script>
+</body>
+
+</html>

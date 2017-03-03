@@ -1,0 +1,5 @@
+<h1>{{ctrl.title}}</h1>
+<div data-ng-if="ctrl.item">
+    <h2>{{ctrl.item.name}}</h2>
+    <img data-ng-if="ctrl.imageUrl" data-ng-src="{{ctrl.imageUrl}}" style="max-width:300px;" />
+</div>

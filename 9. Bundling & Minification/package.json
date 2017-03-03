@@ -1,0 +1,19 @@
+{
+  "name": "x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "build": "tsc && node build.js",
+    "clean": "node clean.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-glob": "^1.2.0",
+    "rimraf": "^2.6.1",
+    "systemjs-builder": "^0.15.32"
+  }
+}

@@ -1,0 +1,6 @@
+<h1>{{ctrl.title}}</h1>
+<div>Search: <input type="text" data-ng-model="ctrl.query" data-ng-model-options="{ debounce: { default: 300 }}" /></div>
+<span data-ng-if="ctrl.isLoading">Loading data...</span>
+<spotify-list items="ctrl.items" on-item-selected="ctrl.selectItem(item)"></spotify-list>
+
+<spotify-details item="ctrl.selectedItem"></spotify-details>
